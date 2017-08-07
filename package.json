@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Ein Programm zum Erstellen und Hochladen von PDFs zu onlinebrief24.de",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "felix",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  },
+  "dependencies": {
+    "appdirectory": "^0.1.0",
+    "electron-store": "^1.2.0",
+    "file-dialog": "0.0.5",
+    "file-select": "^1.0.2",
+    "react-toggle": "^4.0.1",
+    "ssh2": "^0.5.5"
+  }
+}
