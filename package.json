@@ -13,10 +13,19 @@
   },
   "dependencies": {
     "appdirectory": "^0.1.0",
+    "css-toggle-switch": "^4.0.3",
+    "dialog": "^0.3.0",
     "electron-store": "^1.2.0",
+    "electron-viewport": "^1.0.1",
     "file-dialog": "0.0.5",
     "file-select": "^1.0.2",
+    "fs": "0.0.1-security",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-popout": "^0.6.0",
     "react-toggle": "^4.0.1",
+    "remote": "^0.2.6",
     "ssh2": "^0.5.5"
   }
 }

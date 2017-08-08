@@ -1,19 +1,25 @@
 var electron = require('electron') // http://electron.atom.io/docs/api
 var path = require('path')         // https://nodejs.org/api/path.html
 var url = require('url')           // https://nodejs.org/api/url.html
-const fileDialog = require('file-dialog')
+var app = require('electron').remote;
+var fs = require('fs'); // Load the File System to execute our common tasks (CRUD)
+
+const BrowserWindow = require('browser-window')
 
 var window = null
 
 // Wait until the app is ready
 electron.app.once('ready', function () {
   // Create a new window
+
+  var { width, height } = require('electron-viewport')(width, height)
+
   window = new electron.BrowserWindow({
 
     // Set the initial width to 800px
-    width: 800,
+    width: 700,
     // Set the initial height to 600px
-    height: 600,
+    height: 700,
     // Set the default background color of the window to match the CSS
     // background color of the page, this prevents any white flickering
     backgroundColor: "#fff",
@@ -22,6 +28,8 @@ electron.app.once('ready', function () {
     // Set icon
     icon:__dirname+'/img/open.png',
     fullscreenable: false,
+
+    resizable: false,
 
   })
 
@@ -37,7 +45,3 @@ electron.app.once('ready', function () {
     window.show()
   })
 })
-
-electron.app.on('browser-window-created',function(e,window) {
-     window.setMenu(null);
- });

@@ -19,19 +19,183 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="./css/toggle.css" />
+
+
 
   </head>
 
   <body>
 
     <div class="container">
-      <img src="./img/logo.png" alt="Logo">
-      <p>Briefe erstellen und Hochladen und versenden</p>
+      <div class="row">
+        <div class="nine columns">
+          <img src="./img/logo.png" alt="Logo">
+          <p>Briefe erstellen und hochladen und versenden</p>
+        </div>
+        <div class="three columns">
+          <input class="button-primary" type="submit" id="openFile" value="open file" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="one-half column">
+          <h5>Farbe</h5>
+        </div>
+
+        <div class="one-half column">
+          <label class="switch-light switch-material" onclick="">
+            <input type="checkbox">
+
+              <span>
+                <span>Aus</span>
+                <span>An</span>
+                <a></a>
+              </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="one-half column">
+          <h5>Doppelseitig</h5>
+        </div>
+
+        <div class="one-half column">
+          <label class="switch-light switch-material" onclick="">
+            <input type="checkbox">
+
+              <span>
+                <span>Aus</span>
+                <span>An</span>
+                <a></a>
+              </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="one-half column">
+          <h5>C4-Kuvert</h5>
+        </div>
+
+        <div class="one-half column">
+          <label class="switch-light switch-material" onclick="">
+            <input type="checkbox">
+
+              <span>
+                <span>Aus</span>
+                <span>An</span>
+                <a></a>
+              </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <h5>Versandzone</h5>
+        <fieldset>
+          <div class="switch-toggle switch-material">
+            <input id="auto" name="view" type="radio" checked>
+            <label for="auto" onclick="">Automatisch</label>
+
+            <input id="national" name="view" type="radio">
+            <label for="national" onclick="">National</label>
+
+            <input id="international" name="view" type="radio">
+            <label for="international" onclick="">International</label>
+
+            <a></a>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="row">
+        <h5>Einschreiben</h5>
+        <fieldset>
+          <div class="switch-toggle switch-material">
+            <input id="no-track" name="view" type="radio" checked>
+            <label for="no-track" onclick="">Aus</label>
+
+            <input id="delivery-track" name="view" type="radio">
+            <label for="delivery-track" onclick="">Einwurf</label>
+
+            <input id="standard-track" name="view" type="radio">
+            <label for="standard-track" onclick="">Standard</label>
+
+            <input id="signed-track" name="view" type="radio">
+            <label for="signed-track" onclick="">Eigenhändig</label>
+
+            <a></a>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="row">
+        <h5>Zahlschein</h5>
+        <fieldset>
+          <div class="switch-toggle switch-material">
+            <input id="no-payment" name="view" type="radio" checked>
+            <label for="no-payment" onclick="">Kein Zahlschein</label>
+
+            <input id="national-payment" name="view" type="radio">
+            <label for="national-payment" onclick="">Inlands-Zahlschein</label>
+
+            <input id="sepa-payment" name="view" type="radio">
+            <label for="sepa-payment" onclick="">SEPA-Zahlschein</label>
+
+            <a></a>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
     </div>
+
+
   </body>
 
   <script>
     require('./renderer.js')
+
+    var app = require('electron').remote;
+    var dialog = app.dialog;
+    var fs = require('fs');
+
+    document.getElementById("openFile").addEventListener("click", () => {
+
+      dialog.showOpenDialog((fileNames) => {
+        if (fileNames === undefined) {
+          console.log("Keine Datei ausgewählt ");
+          return;
+
+        }
+
+        fs.readFile(fileNames[0], "UTF-8", (err, data) => {
+          if (err) {
+            console.log("Datei kann nicht gelesen werden ", err);
+            return;
+          }
+
+          console.log("Diese Datei wurde ausgewählt : " );
+          console.log(data);
+
+
+        })
+
+
+      })
+
+
+    })
+
+
+
   </script>
 
 </html>
