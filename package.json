@@ -1,31 +1,25 @@
 {
-  "name": "test",
+  "name": "onlinebrief24",
   "version": "1.0.0",
-  "description": "Ein Programm zum Erstellen und Hochladen von PDFs zu onlinebrief24.de",
+  "description": "",
   "main": "main.js",
-  "scripts": {
-    "start": "electron main.js"
+  "dependencies": {
+    "app": "^0.1.0",
+    "bootstrap-show-password": "^1.0.3",
+    "css-toggle-switch": "^4.0.3",
+    "dialog": "^0.3.1",
+    "fs": "0.0.1-security",
+    "hideshowpassword": "^2.0.10",
+    "jquery": "^3.2.1",
+    "password-hash": "^1.2.2",
+    "remote": "^0.2.6"
   },
-  "author": "felix",
-  "license": "ISC",
   "devDependencies": {
     "electron": "^1.6.11"
   },
-  "dependencies": {
-    "appdirectory": "^0.1.0",
-    "css-toggle-switch": "^4.0.3",
-    "dialog": "^0.3.0",
-    "electron-store": "^1.2.0",
-    "electron-viewport": "^1.0.1",
-    "file-dialog": "0.0.5",
-    "file-select": "^1.0.2",
-    "fs": "0.0.1-security",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-popout": "^0.6.0",
-    "react-toggle": "^4.0.1",
-    "remote": "^0.2.6",
-    "ssh2": "^0.5.5"
-  }
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Felix Vorwerk",
+  "license": "ISC"
 }

@@ -1,47 +1,48 @@
-var electron = require('electron') // http://electron.atom.io/docs/api
-var path = require('path')         // https://nodejs.org/api/path.html
-var url = require('url')           // https://nodejs.org/api/url.html
-var app = require('electron').remote;
-var fs = require('fs'); // Load the File System to execute our common tasks (CRUD)
+const electron = require('electron')
+const {app, BrowserWindow} = electron
 
-const BrowserWindow = require('browser-window')
 
-var window = null
+const path = require('path')
+const url = require('url')
 
-// Wait until the app is ready
-electron.app.once('ready', function () {
-  // Create a new window
 
-  var { width, height } = require('electron-viewport')(width, height)
-
-  window = new electron.BrowserWindow({
-
-    // Set the initial width to 800px
+app.on('ready', () => {
+    let window = new BrowserWindow({
     width: 700,
-    // Set the initial height to 600px
     height: 700,
-    // Set the default background color of the window to match the CSS
-    // background color of the page, this prevents any white flickering
     backgroundColor: "#fff",
-    // Don't show the window until it ready, this prevents any white flickering
-    show: false,
-    // Set icon
+    show: true,
     icon:__dirname+'/img/open.png',
     fullscreenable: false,
+    resizable: true,
+    })
 
-    resizable: false,
 
-  })
-
-  // Load a URL in the window to the local index.html path
-  window.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    window.loadURL(url.format({
+    pathname: path.join(__dirname, '/mainWindow/index.html'),
     protocol: 'file:',
-    slashes: true,
-  }))
+    slashes: true
+}))
 
-  // Show window when page is ready
-  window.once('ready-to-show', function () {
-    window.show()
-  })
 })
+
+exports.openWindow = (filename) => {
+    
+    let window = new BrowserWindow({
+    width: 400,
+    height: 500,
+    backgroundColor: "#fff",
+    show: true,
+    icon:__dirname+'/img/open.png',
+    fullscreenable: false,
+    resizable: true,
+    })
+
+
+    window.loadURL(url.format({
+    pathname: path.join(__dirname+ '/' + filename + '/index.html'),
+    protocol: 'file:',
+    slashes: true
+    }))
+
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>onlinebrief24 - Einstellungen</title>
+
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet">
+
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../css/toggle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/password.css" />
+
+</head>
+
+
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="one-half column">
+          <img src="../img/logo.png" alt="Logo">
+        </div>
+        <div class="one-half column">
+            <h3>Einstellungen</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="one-half column">
+          <label class="label" >Testmodus</label>
+        </div>
+
+        <div class="one-half column">
+          <label class="switch-light switch-material" onclick="">
+            <input type="checkbox">
+
+              <span>
+                <span>Aus</span>
+                <span>An</span>
+                <a></a>
+              </span>
+          </label>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="login">
+            <label class="login-label" for="username">Benutzername</label>
+            <input class="login-field  login-field-username" id="username" type="text" placeholder="Benutzername">
+            <label class="login-label" for="password">Passwort</label>
+            <input class="login-field  login-field-password" id="password" type="password" placeholder="Passwort">
+        </div>
+    </div>
+    
+
+        <div class="row">
+            <div class="one-third column"></div>
+            <div class="one-third column">
+                <button class="button-primary" id="saveSettings">speichern</button>
+            </div>
+            <div class="one-third column"></div>
+        </div>
+
+    </div>
+  </body>
+
+
+  <script>
+    require('./settingsWindow.js')
+
+  </script>
+
+</html>
