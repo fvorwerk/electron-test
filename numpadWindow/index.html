@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>onlinebrief24 - PDF uploader</title>
+
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet">
+
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../css/toggle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/password.css" />
+    <link rel="stylesheet" type="text/css" href="../css/icons/material-icons.css" />
+
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="nine columns">
+          <img src="../img/logo.png" alt="Logo">
+          <p>Briefe erstellen und hochladen und versenden</p>
+        </div>
+        <div class="three columns">
+          <button class="button-primary" id="openFile">open</button>
+          <button class="button-primary" id="openSettings">Einstellungen</button>
+          <button class="button-primary" id="openPin">Pin</button>
+        </div>
+      </div>
+
+      <div class="row" id="buttonContainer">
+          <table>
+            <tr>
+                <td style="text-align: center;" colspan="3">
+                    <label class="login-label" for="pin">Pin</label>
+                    <input class="login-field  login-field-password" id="pin" type="number" placeholder="1234" maxlength="4" style="text-align: center;">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <button class="button-primary" id="number-1" value="1">1</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-2" value="2">2</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-3" value="3">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button-primary" id="number-4" value="4">4</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-5" value="5">5</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-6" value="6">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button-primary" id="number-7" value="7">7</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-8" value="8">8</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-9" value="9">9</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <button class="button-primary" id="backspace"><i class="material-icons md-11">backspace</i></i></button>
+                </td>
+                <td>
+                    <button class="button-primary" id="number-0" value="0">0</button>
+                </td>
+                <td>
+                    <button class="button-primary" id="save"><i class="material-icons md-11">check_circle</i></button>
+                </td>
+            </tr>
+
+
+          </table>
+
+
+
+      </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </body>
+
+  <script>
+      require('./numpadWindow.js')
+
+  </script>
+
+</html>

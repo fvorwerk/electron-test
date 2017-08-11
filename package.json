@@ -5,13 +5,15 @@
   "main": "main.js",
   "dependencies": {
     "app": "^0.1.0",
-    "bootstrap-show-password": "^1.0.3",
+    "bcryptjs": "^2.4.3",
     "css-toggle-switch": "^4.0.3",
     "dialog": "^0.3.1",
-    "fs": "0.0.1-security",
+    "fs-sync": "^1.0.4",
+    "hasha": "^3.0.0",
     "hideshowpassword": "^2.0.10",
     "jquery": "^3.2.1",
-    "password-hash": "^1.2.2",
+    "jquery-mobile": "^1.5.0-alpha.1",
+    "material-design-icons": "^3.0.1",
     "remote": "^0.2.6"
   },
   "devDependencies": {

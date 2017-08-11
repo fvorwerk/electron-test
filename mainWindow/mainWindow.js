@@ -32,8 +32,14 @@ function readFile(filepath) {
 
 }
 
-var button = document.getElementById('openSettings')
-button.addEventListener('click', () => {
+var openSettings = document.getElementById('openSettings')
+openSettings.addEventListener('click', () => {
     main.openWindow('settingsWindow')
+
+}, false)
+
+var openPin = document.getElementById('openPin')
+openPin.addEventListener('click', () => {
+    main.openWindow('numpadWindow')
 
 }, false)
